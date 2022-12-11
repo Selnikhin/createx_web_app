@@ -18,7 +18,7 @@ class Register_button extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 'Get consultation',
-                style: LatoWhite16w700,
+                style: Lato_White_16_w700,
               ),
             ),
           ),
@@ -37,7 +37,7 @@ class Register_button extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     'Log in / Register',
-                    style: LatoGrey16w700,
+                    style: Lato_Grey800_16_w700,
                   ),
                 ),
               ],

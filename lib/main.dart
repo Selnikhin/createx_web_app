@@ -1,7 +1,8 @@
 
 
-import 'package:flutter/material.dart';
 import 'package:createx_web_app/Components/Header/Header.dart';
+import 'package:flutter/material.dart';
+import 'Contacts/Map_block.dart';
 
 void main() {
   runApp(Createx_web());
@@ -17,7 +18,7 @@ class Createx_web extends StatelessWidget {
         visualDensity: (VisualDensity.comfortable),
         primarySwatch: Colors.red,
       ),
-      home: Header()
+      home:Map_block(),
     );
   }
 }
