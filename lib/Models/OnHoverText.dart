@@ -23,7 +23,7 @@ import 'package:sprung/sprung.dart';
        onExit: (event) => onEntered(false),
        child: AnimatedContainer(
          curve: Sprung.overDamped,
-           duration: Duration(milliseconds: 300),
+           duration: Duration(milliseconds: 200),
            transform: transform,
            child: widget.builder(isHovered),
        ),

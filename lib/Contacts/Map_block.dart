@@ -1,7 +1,8 @@
 import 'package:createx_web_app/Components/Header/Header.dart';
 import 'package:flutter/material.dart';
 import 'package:createx_web_app/Models/Text_style.dart';
-import 'package:createx_web_app/Models/OnHoverText.dart';
+import 'package:createx_web_app/Contacts/contact_info.dart';
+
 
 class Map_block extends StatelessWidget {
   const Map_block({Key? key}) : super(key: key);
@@ -10,59 +11,21 @@ class Map_block extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: Container(
+        child: SizedBox(
           width: 1230,
           // color: Colors.yellow,
           child: ListView(
-            children: [
+            children: const [
               Header(),
               SizedBox(
-                height: 138,
+                height: 119,
               ),
-              Container(
-                width: 1230,
-                height: 460,
-                // color: Colors.grey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 255,
-                      height: 92,
-                      //color: Colors.green,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'CONTACT INFO',
-                            style: Lato_Gray900_16_w700,
-                          ),
-                          Text(
-                            'Get in touch',
-                            style: Lato_Gray900_46_w700,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    email(),
-                    SizedBox(
-                      height: 24,
-                    ),
-                    _call(),
-                    SizedBox(
-                      height: 24,
-                    ),
-                    _address(),
-                    SizedBox(
-                      height: 48,
-                    ),
-                    follow_us(),
-                  ],
-                ),
+              Contact_info(),
+
+              SizedBox(
+                height: 154,
               ),
+              _any_questions(),
             ],
           ),
         ),
@@ -71,253 +34,269 @@ class Map_block extends StatelessWidget {
   }
 }
 
-class email extends StatelessWidget {
-  const email({Key? key}) : super(key: key);
 
+
+
+class _any_questions extends StatefulWidget {
+  const _any_questions({Key? key}) : super(key: key);
+
+  @override
+  State<_any_questions> createState() => _any_questionsState();
+}
+
+class _any_questionsState extends State<_any_questions> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 187,
-      height: 48,
+      width: 1245,
+      height: 614,
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            child: Image.asset(
-              'assets/icons/chat.png',
-              width: 21,
-              height: 19,
-            ),
+            width: 435,
+            height: 481,
+            child: Image.asset('assets/images/illustration.png'),
           ),
-          SizedBox(
-            width: 13,
+          const SizedBox(
+            width: 90,
           ),
-          Container(
-            width: 151,
-            height: 48,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Talk to us:',
-                  style: Lato_Gray700_14_w700,
-                ),
-                Text(
-                  'hello@createx.com',
-                  style: Lato_Grey900_18_w400,
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _address extends StatelessWidget {
-  const _address({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 400,
-      height: 48,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            child: Image.asset(
-              'assets/icons/teg.png',
-              width: 24,
-              height: 24,
-            ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Container(
-            width: 360,
-            height: 48,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Address:',
-                  style: Lato_Gray700_14_w700,
-                ),
-                Text(
-                  '2464 Royal Ln. Mesa, New Jersey 45463, USA',
-                  style: Lato_Grey900_18_w400,
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _call extends StatelessWidget {
-  const _call({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 395,
-      height: 48,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            child: Image.asset(
-              'assets/icons/phone.png',
-              width: 14,
-              height: 22,
-            ),
-          ),
-          SizedBox(
-            width: 17,
-          ),
-          Container(
-            width: 126,
-            height: 48,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Call us:',
-                  style: Lato_Gray700_14_w700,
-                ),
-                Text(
-                  '(405) 555-0128',
-                  style: Lato_Grey900_18_w400,
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class follow_us extends StatefulWidget {
-  const follow_us({Key? key}) : super(key: key);
-
-  @override
-  State<follow_us> createState() => _follow_usState();
-}
-
-class _follow_usState extends State<follow_us> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 304,
-      height: 72,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 104,
-            height: 24,
-            child: Text(
-              'FOLLOW US:',
-              style: Lato_Gray900_16_w700,
-            ),
-          ),
-          // SizedBox(height: 25,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              OnHoverText(
-                builder: (isHovered) {
-                  final color = isHovered ? Colors.red : Colors.grey[700];
-                  return IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/F.png',
-                      color: color,
-                      width: 11.5,
-                      height: 22,
-                    ),
-                  );
-                },
+              Text(
+                'ANY QUESTION?',
+                style: Lato_Gray900_16_w700,
               ),
-              OnHoverText(
-                builder: (isHovered) {
-                  final color = isHovered ? Colors.red : Colors.grey[700];
-                  return IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/Twit.png',
-                      color: color,
-                      width: 21,
-                      height: 16,
-                    ),
-                  );
-                },
+              Text('Drop us a line', style: Lato_Gray900_46_w900),
+              const SizedBox(
+                height: 40,
               ),
-              OnHoverText(
-                builder: (isHovered) {
-                  final color = isHovered ? Colors.red : Colors.grey[700];
-                  return IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/you_tube.png',
-                      color: color,
-                      width: 24,
-                      height: 16,
+              Row(
+                children: [
+                  Container(
+                    width: 332,
+                    height: 86,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('First Name*', style: Lato_Grey800_16_w400),
+                        const SizedBox(height: 8),
+                        const TextField(
+                          decoration: InputDecoration(
+                              labelText: 'Your first name',
+                              enabledBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.grey),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(4)),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.grey),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(4)),
+                              )),
+                        ),
+                      ],
                     ),
-                  );
-                },
+                  ),
+                  const SizedBox(width: 25),
+                  Container(
+                    width: 332,
+                    height: 86,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Last Name*', style: Lato_Grey800_16_w400),
+                        const SizedBox(height: 8),
+                        const TextField(
+                          decoration: InputDecoration(
+                            labelText: 'Your last name',
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 1, color: Colors.grey),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 1, color: Colors.redAccent),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              OnHoverText(
-                builder: (isHovered) {
-                  final color = isHovered ? Colors.red : Colors.grey[700];
-                  return IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/telega.png',
-                      color: color,
-                      width: 22,
-                      height: 20,
+              const SizedBox(height: 24),
+              Row(
+                children: [
+                  Container(
+                    width: 332,
+                    height: 86,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Email*', style: Lato_Grey800_16_w400),
+                        const SizedBox(height: 8),
+                        const TextField(
+                          decoration: InputDecoration(
+                            labelText: 'Your working email',
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 1, color: Colors.grey),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 1, color: Colors.redAccent),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  );
-                },
+                  ),
+                  const SizedBox(width: 25),
+                  Container(
+                    width: 332,
+                    height: 86,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Phone', style: Lato_Grey800_16_w400),
+                        const SizedBox(height: 8),
+                        const TextField(
+                          decoration: InputDecoration(
+                            labelText: 'Your phone number',
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 1, color: Colors.grey),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(width: 1, color: Colors.redAccent),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              OnHoverText(
-                builder: (isHovered) {
-                  final color = isHovered ? Colors.red : Colors.grey[700];
-                  return IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/insta.png',
-                      color: color,
-                      width: 20,
-                      height: 20,
+              const SizedBox(height: 24),
+              Container(
+                width: 690,
+                height: 162,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Message*', style: Lato_Grey800_16_w400),
+                    const SizedBox(height: 8),
+                    const TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Your message',
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(width: 1, color: Color(0xFFBDBDBD)),
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(width: 1, color: Colors.redAccent),
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                        ),
+                      ),
+                      maxLines: 5,
                     ),
-                  );
-                },
-              ),OnHoverText(
-                builder: (isHovered) {
-                  final color = isHovered ? Colors.red : Colors.grey[700];
-                  return IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icons/In.png',
-                      color: color,
-                      width: 20,
-                      height: 20,
-                    ),
-                  );
-                },
+                  ],
+                ),
+              ),
+              const SizedBox(height: 48),
+              const _send_massage(),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class _send_massage extends StatefulWidget {
+  const _send_massage({Key? key}) : super(key: key);
+
+  @override
+  State<_send_massage> createState() => _send_massageState();
+}
+
+class _send_massageState extends State<_send_massage> {
+  bool isChecked = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 315,
+          height: 52,
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 16,
+                height: 16,
+                child: Checkbox(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  value: isChecked,
+                  onChanged: (value) {
+                    setState(() => isChecked = value!);
+                  },
+                  activeColor: Colors.red,
+                  checkColor: Colors.white,
+                ),
+              ),
+              const SizedBox(width: 12),
+              SizedBox(
+                width: 287,
+                height: 52,
+                child: Text(
+                  'I agree to receive communications from Createx Online School',
+                  style: Lato_Grey800_16_w400,
+                ),
               ),
             ],
-          )
-        ],
-      ),
+          ),
+        ),
+
+
+        const SizedBox(width: 50),
+        Container(
+          width: 340,
+          height: 52,
+          child: FloatingActionButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4),
+            ),
+            onPressed: () {},
+            child: Text(
+              'Sand massage',
+              style: Lato_White_16_w700,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

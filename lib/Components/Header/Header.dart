@@ -24,7 +24,7 @@ class _HeaderState extends State<Header> {
               child: Container(
                 width: 1230,
                 height: 52,
-                color: Colors.grey,
+
                 child: Row(
 
                   children: const [
