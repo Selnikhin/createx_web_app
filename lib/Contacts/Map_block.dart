@@ -2,6 +2,7 @@ import 'package:createx_web_app/Components/Header/Header.dart';
 import 'package:flutter/material.dart';
 import 'package:createx_web_app/Models/Text_style.dart';
 import 'package:createx_web_app/Contacts/contact_info.dart';
+import 'package:createx_web_app/Components/Footer/footer.dart';
 
 
 class Map_block extends StatelessWidget {
@@ -10,24 +11,35 @@ class Map_block extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Center(
-        child: SizedBox(
-          width: 1230,
-          // color: Colors.yellow,
-          child: ListView(
-            children: const [
-              Header(),
-              SizedBox(
-                height: 119,
-              ),
-              Contact_info(),
+      child: Container(
+        width: 1920,
+        child: ListView(
+          children:  [ Container(
+            width: 1230,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Header(),
+                SizedBox(
+                  height: 119,
+                ),
+                Contact_info(),
 
-              SizedBox(
-                height: 154,
-              ),
-              _any_questions(),
-            ],
+                SizedBox(
+                  height: 154,
+                ),
+                _any_questions(),
+
+              ],
+            ),
           ),
+            SizedBox(height: 168),
+            Container( height: 396,
+                color: Color(0xFF1E212C),
+                child: Footer()),
+
+
+          ],
         ),
       ),
     );
